@@ -1,0 +1,12 @@
+Đây là Project mô phỏng việc sử dụng websocket tạo chat room
+1. Cài đặt websocket package
+- npm install websocket
+
+2. Tạo 1 file server.js cho websocket chat room
+ - Thông thường server websocket sẽ được tạo tại BE với đa nền tảng được hỗ trợ như 
+ C#, Java, NodeJS, ...
+ - Để chạy file server.js ta nhập cmd ngay tại location file: node server.js
+
+3. Tạo 1 file ChatRoom.js trong folder pages (folder sẽ còn mở rộng hơn cho nhiều vấn đề)
+ - ChatRoom.js trong folder sẽ là nơi vận dụng websocket và khởi tạo 1 giao diện
+mẫu cho chat room.
