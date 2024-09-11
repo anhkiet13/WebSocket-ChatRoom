@@ -5,7 +5,7 @@ const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [socket, setSocket] = useState(null);
-
+  
   useEffect(() => {
     const ws = new WebSocket('ws://localhost:8080');
     setSocket(ws);
@@ -13,7 +13,7 @@ const ChatRoom = () => {
     ws.onmessage = (event) => {
       setMessages(prevMessages => [...prevMessages, event.data]);
     };
-
+    
     return () => {
       ws.close();
     };
@@ -25,12 +25,14 @@ const ChatRoom = () => {
       setInput('');
     }
   };
-
+  // console.log("Messages: ",messages);
+  console.log(socket);
+  
   return (
     <div>
       <h1>Chat Room</h1>
       <div>
-        {messages.map((msg, index) => (
+      {messages.length > 0 && messages.map((msg, index) => (
           <p key={index}>{msg}</p>
         ))}
       </div>
